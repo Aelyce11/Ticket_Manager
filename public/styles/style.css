@@ -1,0 +1,223 @@
+* {
+  background-color: transparent;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+p,
+a,
+li,
+span,
+label {
+  color: #fff;
+}
+
+body {
+  min-height: 100vh;
+  max-width: 100vw;
+  width: 100vw;
+  color: #fff;
+  font-size: 20px;
+  background-color: #000;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  border-bottom: 1px solid #fff;
+}
+header div {
+  display: flex;
+}
+header div > * {
+  margin: 0px 0.5em;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 500;
+}
+
+h2 {
+  display: flex;
+  padding: 0.5em 1em;
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+p {
+  line-break: anywhere;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  font-size: 0.6em;
+  color: #888;
+}
+
+.center-self {
+  align-self: center;
+  margin: 2em;
+}
+
+.left-self {
+  align-self: flex-start;
+  margin: 2em;
+}
+
+.right-self {
+  align-self: flex-start;
+  margin: 2em;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid #fff;
+}
+
+button,
+input[type=button],
+.button {
+  background-color: #181a1b;
+  color: #90cbf3;
+  border-radius: 5px;
+  font-weight: 700;
+  padding: 1em 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #181a1b;
+  color: #90cbf3;
+  border-radius: 5px;
+  font-weight: 600;
+  padding: 0.5em 1em;
+  font-size: 0.8em;
+}
+
+.ticket-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  align-self: center;
+}
+.ticket-list li {
+  padding: 1em;
+  border-bottom: 1px solid #fff;
+}
+.ticket-list li a {
+  display: flex;
+  flex-direction: column;
+}
+.ticket-list li span {
+  color: #888;
+}
+
+.ticket-show {
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+}
+.ticket-show span {
+  color: #888;
+  padding-left: 1.5em;
+}
+.ticket-show p {
+  padding: 2em;
+}
+.ticket-show ul {
+  list-style: square;
+  padding: 0px 10vw;
+}
+
+.comments {
+  max-width: 75vw;
+  width: 75vw;
+  align-self: center;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-top: 2em;
+  position: relative;
+}
+.comments li {
+  border-bottom: 1px solid #fff;
+  padding: 0.5em 0px;
+  display: flex;
+  flex-direction: column;
+}
+.comments span {
+  color: #888;
+  font-size: 0.8em;
+}
+.comments a {
+  align-self: flex-end;
+  position: absolute;
+}
+.comments p {
+  margin: 0.5em 0px 0px 0.5em;
+}
+
+#comment {
+  align-self: stretch;
+}
+#comment div {
+  display: flex;
+  flex-direction: column;
+  padding: 0.25em 2em;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+.flex-center > * {
+  margin: 0px 0.5em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+  padding: 0.5em 1em;
+  border-bottom: 1px solid #fff;
+}
+
+/*# sourceMappingURL=style.css.map */

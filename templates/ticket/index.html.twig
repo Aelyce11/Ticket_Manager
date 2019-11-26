@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ticket index
+{% endblock %}
+
+{% block body %}
+
+{% if app.user %}
+<h2>Your tickets :</h2>
+
+<ul class="ticket-list">
+    {% for ticket in tickets %}
+    <li>
+        <a href="{{ path('ticket_show', {'id': ticket.id}) }}" class="ticketThumb">
+            <h3>{{ ticket.name }}</h3>
+            <span>Created :
+                {{ ticket.createdAt ? ticket.createdAt|date('Y-m-d H:i:s') : '' }}</span>
+            {% if ticket.createdAt != ticket.updatedAt %}
+            <span>Last updated :
+                {{ ticket.updatedAt ? ticket.updatedAt|date('Y-m-d H:i:s') : '' }}</span>
+            {% endif %}
+        </a>
+    </li>
+    {% else %}
+    <li>no records found</li>
+    {% endfor %}
+</ul>
+
+<a href="{{ path('ticket_new') }}" class="button center-self">Create new</a>
+{% else %}
+<h2>You need to be connected to access tickets.</h2>
+{% endif %}
+
+{% endblock %}

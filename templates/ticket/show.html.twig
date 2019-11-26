@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ticket
+{% endblock %}
+
+{% block body %}
+<a href="{{ path('ticket_index') }}" class="button-small left-self">back to list</a>
+{% if app.user in ticket.users or is_granted("ROLE_ADMIN") %}
+<div class="ticket-show">
+    <h2>{{ ticket.name }}</h2>
+    <span>Created at
+        {{ ticket.createdAt ? ticket.createdAt|date('Y-m-d H:i:s') : '' }}</span>
+    {% if ticket.createdAt != ticket.updatedAt %}
+    <span>Last updated at
+        {{ ticket.updatedAt ? ticket.updatedAt|date('Y-m-d H:i:s') : '' }}</span>
+    {% endif %}
+    <p>{{ ticket.content }}</p>
+
+    <ul>
+        {% for user in ticket.users %}
+        <li>
+            {{user.email}}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% if is_granted("ROLE_ADMIN") %}
+<div class="flex-center">
+    <a href="{{ path('ticket_edit', {'id': ticket.id}) }}" class="button">Edit</a>
+    {{ include('ticket/_delete_form.html.twig') }}
+</div>
+{% endif %}
+<section class="comments">
+    <h3>Comments :</h3>
+    <ul>
+        {% for comment in ticket.comments %}
+        <li>
+            <h4>{{ comment.user ? comment.user.email : "User deleted" }}</h4>
+            <span>Created at
+                {{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i:s') : '' }}</span>
+            {% if comment.createdAt != comment.updatedAt %}
+            <span>Last updated at
+                {{ comment.updatedAt ? comment.updatedAt|date('Y-m-d H:i:s') : '' }}</span>
+            {% endif %}
+
+            <p>{{ comment.content|nl2br }}</p>
+
+            {% if is_granted("ROLE_ADMIN") %}
+            <a href="{{ path('comment_edit', {'id': comment.id}) }}" class="button-small">Edit</a>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
+</section>
+{% else %}
+<h2>You do not have access to this ticket, go back to where you came from !</h2>
+{% endif %}
+{% endblock %}

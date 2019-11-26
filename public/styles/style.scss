@@ -1,0 +1,208 @@
+@import "var.scss";
+@import "reset.scss";
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    border-bottom: 1px solid $white;
+
+    div {
+        display: flex;
+
+        >* {
+            margin: 0px .5em;
+        }
+    }
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 500;
+}
+
+h2 {
+    display: flex;
+    padding: .5em 1em;
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin-bottom: .5em;
+}
+
+p {
+    line-break: anywhere;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    font-size: .6em;
+    color: $grey;
+}
+
+.center-self {
+    align-self: center;
+    margin: 2em;
+}
+
+.left-self {
+    align-self: flex-start;
+    margin: 2em;
+}
+
+.right-self {
+    align-self: flex-start;
+    margin: 2em;
+}
+
+textarea {
+    width: 100%;
+    border: 1px solid $white;
+}
+
+button,
+input[type="button"],
+.button {
+    background-color: $greyDark;
+    color: $accentLight;
+    border-radius: 5px;
+    font-weight: 700;
+    padding: 1em 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $greyDark;
+    color: $accentLight;
+    border-radius: 5px;
+    font-weight: 600;
+    padding: .5em 1em;
+    font-size: .8em;
+}
+
+.ticket-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    align-self: center;
+
+    li {
+        padding: 1em;
+        border-bottom: 1px solid $white;
+
+        a {
+            display: flex;
+            flex-direction: column;
+        }
+
+        span {
+            color: $grey;
+        }
+    }
+}
+
+.ticket-show {
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+
+    span {
+        color: $grey;
+        padding-left: 1.5em;
+    }
+
+    p {
+        padding: 2em;
+    }
+
+    ul {
+        list-style: square;
+        padding: 0px 10vw;
+    }
+}
+
+.comments {
+    max-width: 75vw;
+    width: 75vw;
+    align-self: center;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 2em;
+    position: relative;
+
+    li {
+        border-bottom: 1px solid $white;
+        padding: .5em 0px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    span {
+        color: $grey;
+        font-size: .8em;
+    }
+
+    a {
+        align-self: flex-end;
+        position: absolute;
+    }
+
+    p {
+        margin: .5em 0px 0px .5em;
+    }
+}
+
+#comment {
+    align-self: stretch;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        padding: .25em 2em;
+    }
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+
+    >* {
+        margin: 0px .5em;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    // label,
+    // input,
+    // button,
+    // textarea {
+    //     margin: .25em 2em;
+    // }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: .5em 1em;
+    border-bottom: 1px solid $white;
+}
